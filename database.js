@@ -31,9 +31,9 @@ if (fs.existsSync(dbPath)) {
     },
     {
       id: 2,
-      name: 'Jane Smith',
-      phone: '9876543211',
-      email: 'jane@example.com',
+      name: 'Jagdish Suthar',
+      phone: '7023204168',
+      email: 'jks@gmail.com',
       status: 'active',
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString()
@@ -166,3 +166,4 @@ module.exports = {
   db,
   statements
 };
+
