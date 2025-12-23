@@ -145,6 +145,58 @@ app.post('/api/locations', (req, res) => {
 });
 
 // ============================================
+// Debug Endpoints (View Database)
+// ============================================
+
+// View entire database contents
+app.get('/api/debug/database', (req, res) => {
+  try {
+    res.json({
+      success: true,
+      database: {
+        riders: db.riders,
+        locations: db.locations
+      },
+      stats: {
+        totalRiders: db.riders.length,
+        totalLocations: db.locations.length,
+        activeRiders: db.riders.filter(r => r.status === 'active').length
+      }
+    });
+  } catch (error) {
+    console.error('Error fetching database:', error);
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// View only riders
+app.get('/api/debug/riders', (req, res) => {
+  try {
+    res.json({
+      success: true,
+      riders: db.riders,
+      count: db.riders.length
+    });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// View only locations
+app.get('/api/debug/locations', (req, res) => {
+  try {
+    res.json({
+      success: true,
+      locations: db.locations,
+      count: db.locations.length
+    });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+
+// ============================================
 // WebSocket Events
 // ============================================
 
