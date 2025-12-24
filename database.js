@@ -21,29 +21,11 @@ if (fs.existsSync(dbPath)) {
   // Create sample riders
   db.riders = [
     {
-      id: 1,
-      name: 'John Doe',
-      phone: '9876543210',
-      email: 'john@example.com',
-      status: 'active',
-      created_at: new Date().toISOString(),
-      updated_at: new Date().toISOString()
-    },
-    {
       id: 2,
       name: 'Jagdish Suthar',
       phone: '7023204168',
       email: 'jks@gmail.com',
       status: 'active',
-      created_at: new Date().toISOString(),
-      updated_at: new Date().toISOString()
-    },
-    {
-      id: 3,
-      name: 'Mike Johnson',
-      phone: '9876543212',
-      email: 'mike@example.com',
-      status: 'inactive',
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString()
     }
@@ -166,4 +148,5 @@ module.exports = {
   db,
   statements
 };
+
 
